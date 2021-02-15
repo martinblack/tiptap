@@ -43,7 +43,7 @@ export default class Mention extends Node {
           tag: 'span[data-mention-id]',
           getAttrs: dom => {
             const id = dom.getAttribute('data-mention-id')
-            const label = dom.innerText.split(this.options.matcher.char).join('')
+            const label = dom.innerText.replace(this.options.matcher.char, '')
             return { id, label }
           },
         },
